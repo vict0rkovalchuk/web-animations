@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="square"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const element = document.querySelector('.square');
+
+        document.addEventListener('click', (event) => {
+          element.style.transform = `translate(${event.clientX - 50}px, ${event.clientY - 50}px)`;
+        });
+
+        element.addEventListener('transitionrun', (event) => {
+          console.log(event);
+        });
+        element.addEventListener('transitionstart', (event) => {
+          console.log(event);
+        });
+        element.addEventListener('transitionend', (event) => {
+          if(event.propertyName !== 'transform') return;
+
+          const randomColor = Math.floor(Math.random()*16777215).toString(16);
+          element.style.backgroundColor = `#${randomColor}`;
+        });
+      })
+    </script>
+  </body>
+</html>
