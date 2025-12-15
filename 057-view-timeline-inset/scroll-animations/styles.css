@@ -1,0 +1,77 @@
+body {
+  background-color: #1d1d1d;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  timeline-scope: --progress-view;
+}
+
+.container {
+  height: 100vh;
+  overflow: auto;
+  background-color: #100e1e;
+  animation: changeBg linear both;
+  animation-timeline: --progress-view;
+}
+
+.container:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 5px;
+  background-color: gold;
+  top: 100px;
+  z-index: 100;
+}
+.container:after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 5px;
+  background-color: gold;
+  bottom: 100px;
+  z-index: 100;
+}
+
+.content {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.progress {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(57, 41, 67);
+  position: relative;
+  margin: 20px 0;
+}
+.progress-inner {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(209, 90, 213);
+  view-timeline: --progress-view;
+  animation: animateWidth linear both;
+  animation-timeline: --progress-view;
+  view-timeline-inset: 100px 100px;
+  animation-range: 100px calc(100% - 100px);
+}
+
+@keyframes animateWidth {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes changeBg {
+  to {
+    background-color: royalblue;
+  }
+}
