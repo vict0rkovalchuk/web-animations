@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222222;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  transition: background-color 1s;
+  @starting-style {
+    background-color: skyblue;
+  }
+}
+
+.square.blue {
+  background-color: blue;
+}
