@@ -154,9 +154,6 @@ body {
 .coins .count {
   font-size: 1.6rem;
 }
-/* .coins .count .coins-count {
-  view-transition-name: coins;
-} */
 
 .lives .hearts {
   display: flex;
