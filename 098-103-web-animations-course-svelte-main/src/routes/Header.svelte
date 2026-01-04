@@ -27,6 +27,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 100;
+		view-transition-name: header;
 	}
 	.header .header-inner {
 		height: var(--header-height);

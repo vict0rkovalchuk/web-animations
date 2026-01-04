@@ -32,14 +32,47 @@ img {
 }
 
 
-::view-transition-new(image-3),
-::view-transition-old(image-3) {
-  animation: none;
-  mix-blend-mode: normal;
-  height: 100%;
-  overflow: hidden;
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-to-right {
+  to {
+    transform: translateX(100%);
+  }
 }
 
-::view-transition-new(image-3) {
-  object-fit: cover;
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 640px) {
+  ::view-transition-new(root) {
+    animation: slide-from-right 0.25s ease-out both;
+  }
+  ::view-transition-old(root) {
+    animation: slide-to-left 0.25s ease-out both;
+  }
+  html.back::view-transition-new(root) {
+    animation: slide-from-left 0.25s ease-out both;
+  }
+  html.back::view-transition-old(root) {
+    animation: slide-to-right 0.25s ease-out both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }

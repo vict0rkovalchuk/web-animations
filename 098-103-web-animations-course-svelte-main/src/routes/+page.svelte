@@ -10,7 +10,11 @@
 	<div class="grid">
 		{#each data as item (item.id)}
 			<div class="grid-item">
-				<img src={item.thumbnail} alt={item.title} style:view-transition-name="image-{item.id}"/>
+				<img 
+					src={item.thumbnail} 
+					alt={item.title} 
+					style:view-transition-name="image-{item.id}"
+				/>
 				<h3><a href="image/{item.id}">{item.title}</a></h3>
 			</div>
 		{/each}
@@ -83,5 +87,11 @@
 		aspect-ratio: 1.666;
 		object-fit: cover;
 		transition: 0.3s;
+	}
+
+	@media (max-width: 640px) {
+		.grid .grid-item img {
+			view-transition-name: none !important;
+		}
 	}
 </style>

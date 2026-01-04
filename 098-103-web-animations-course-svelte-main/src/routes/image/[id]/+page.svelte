@@ -58,4 +58,10 @@
 		line-height: 1.8;
 		margin-top: 40px;
 	}
+
+	@media (max-width: 640px) {
+		.item > img {
+			view-transition-name: none !important;
+		}
+	}
 </style>
