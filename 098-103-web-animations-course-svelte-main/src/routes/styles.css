@@ -1,0 +1,34 @@
+@import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  --bg: #12141a;
+  --header-height: 80px;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  padding: 0;
+  margin: 0;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
