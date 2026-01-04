@@ -10,7 +10,7 @@
 	<div class="grid">
 		{#each data as item (item.id)}
 			<div class="grid-item">
-				<img src={item.thumbnail} alt={item.title} />
+				<img src={item.thumbnail} alt={item.title} style:view-transition-name="image-{item.id}"/>
 				<h3><a href="image/{item.id}">{item.title}</a></h3>
 			</div>
 		{/each}

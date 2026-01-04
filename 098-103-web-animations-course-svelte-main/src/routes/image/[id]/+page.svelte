@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div class="item">
-	<img src={item?.image} alt={item?.title} />
+	<img src={item?.image} alt={item?.title} style:view-transition-name="image-{item?.id}"/>
 	<h2>{item?.title}</h2>
 	<div class="info">
 		<div class="date info-item">
